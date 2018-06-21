@@ -2,7 +2,7 @@
 
 最近更新日期：{docsify-updated}
 
-# 1. 查询合作伙伴下某一租户的所有分机
+# 1. 查询租户所有分机
 **请求示例**
 
 请求头部字段`Authorization`字段值即申请到的`partner`类型的`token`值
