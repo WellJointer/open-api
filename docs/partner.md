@@ -1,9 +1,9 @@
-﻿﻿# 合作伙伴接口
+# 合作伙伴接口
 
 最近更新日期：{docsify-updated}
 
-# 1. 查询租户所有分机
-**请求示例**
+# 1 查询租户所有分机
+## 1.1 请求示例 {docsify-ignore}
 
 请求头部字段`Authorization`字段值即申请到的`partner`类型的`token`值
 
@@ -153,17 +153,17 @@ Authorization: 12345678
   "total": 1
 }
 ```
-**路径与查询字符串参数模型**
+## 1.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `GET http://tpisdk.wellcloud.cc/api/operation/operation/partner/tenant/extensions?domain={domain}`
 
-**参数说明**
+## 1.3 参数说明 {docsify-ignore}
 
 名称 | 约束 | 说明
 ---|---|---
 domain| 必填 | 域名
 
-**响应体说明**
+## 1.4 响应体说明 {docsify-ignore}
 
 属性|说明
 ---|---
@@ -175,6 +175,4 @@ updateTime|更新时间
 code|分机号
 password|密码
 org|组织架构
-
-
 

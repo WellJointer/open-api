@@ -3,7 +3,8 @@
 最近更新日期：{docsify-updated}
 
 # 1.创建分机
-**1.1 请求示例**
+
+## 1.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -45,12 +46,12 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
-**1.2 路径与查询字符串参数模型**
+## 1.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `POST http://tpisdk.wellcloud.cc/api/operation/tenant/resources/extensions
 `
 
-**请求体说明**
+## 1.3 请求体说明 {docsify-ignore}
 
 属性|类型|约束|说明
 ---|---|---|---
@@ -60,7 +61,7 @@ password|String|必填|密码
 _type|String|必填|类型
 org||非必填|组织架构
 
-**响应体说明**
+## 1.4 响应体说明 {docsify-ignore}
 
 属性|说明
 ---|---

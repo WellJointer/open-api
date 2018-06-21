@@ -15,7 +15,7 @@ Token是WellCloud平台的全局唯一接口调用凭据，第三方调用各接
 Authorization: token
 ```
 
-**1.1 请求示例**
+## 1.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -30,7 +30,7 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
-**1.2 路径与查询字符串参数模型**
+## 1.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `POST http://tpiag.wellcloud.cc/p/api/operation/operation/apply/token?appId={{appId}}&appSecret={{appSecret}}&type={{type}}`
 
@@ -40,14 +40,14 @@ appId | 是 | appId
 appSecret | 是 | appSecret
 type | 是 | 租户类型。partner代表合作伙伴，tenant表示租户
 
-**响应体说明**
+## 1.3 响应体说明 {docsify-ignore}
 
 名称 | 说明
 ---|---
 token | token
 
 
-**异常响应与解决方案**
+## 1.4 异常响应与解决方案 {docsify-ignore}
 
 异常响应体 | 问题原因 |解决方案
 --- | --- | ---

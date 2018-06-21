@@ -2,10 +2,10 @@
 
 最近更新日期：{docsify-updated}
 
-# 1. 创建组织架构
+# 1 创建部门
 
-**请求示例**
-
+## 1.1 请求示例 {docsify-ignore}
+ 
 请求头部字段`Authorization`字段值即申请到的`token`值
 
 ```
@@ -34,11 +34,12 @@ Content-Type: application/json;charset=utf-8
   "treePos": "88d34fe2-6ca3-4038-aab8-de5f239735ee_1"
 }
 ```
-**路径与查询字符串参数模型**
+
+## 1.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `POST http://tpisdk.wellcloud.cc/api/security/security/org`
 
-**请求体说明**
+## 1.3 请求体说明 {docsify-ignore}
 
 属性 | 类型 | 约束 | 说明
 --- | --- | --- | ---
@@ -46,15 +47,15 @@ name|string|必选|部门名称
 description|string|非必选|对此部门的描述
 parent||必选|上级部门
 
-**响应体说明**
+## 1.4 响应体说明 {docsify-ignore}
 
 属性|说明
 ---|---
 treePos|树形结构标识
 
-# 2. 查询一级组织架构
+# 2 查询顶级部门
 
-**请求示例**
+## 2.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -82,11 +83,11 @@ Authorization: 12345678
 }
 ```
 
-**路径与查询字符串参数模型**
+## 2.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `GET http://tpisdk.wellcloud.cc/api/security/security/org/topOrg`
 
-**响应体说明**
+## 2.3 响应体说明 {docsify-ignore}
 
 属性 | 类型 | 约束 | 说明
 --- | --- | --- | ---
@@ -99,9 +100,10 @@ children|list|非必选|是一个数组，其中的元素也是一个部门对�
 parent|array|必选|表示其上级部门的id，以此为根据创建下级部门
 说明：
 children是一个数组，其中的每个元素都是一个部门的信息。
-# 3. 查询某一部门信息
 
-**请求示例**
+# 3. 查询部门信息
+
+## 3.1 请求示例 {docsify-ignore}
 
 请求头部字段`Authorization`字段值即申请到的`token`值
 
@@ -123,11 +125,11 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
-**路径与查询字符串参数模型**
+## 3.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `GET http://tpisdk.wellcloud.cc/api/security/security/org/{orgId}`
 
-**响应体说明**
+## 3.3 响应体说明 {docsify-ignore}
 
 属性 | 类型  | 说明
 --- | --- |  ---
@@ -139,9 +141,9 @@ treePos|string|可以忽略
 children|list|是一个数组，其中的元素也是一个部门对象，表示其下级部门
 parent|array|表示其上级部门的id，以此为根据创建下级部门
 
-# 4. 查询某一部门及其下级的部门
+# 4 查询部门及子部门信息 
 
-**请求示例**
+## 4.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -181,11 +183,11 @@ Authorization: 12345678
 }
 ```
 
-**路径与查询字符串参数模型**
+## 4.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `GET http://tpisdk.wellcloud.cc/api/security/security/org/subOrgs/{orgId}`
 
-**响应体说明**
+## 4.3 响应体说明 {docsify-ignore}
 
 属性 | 类型  | 说明
 --- | --- |  ---
@@ -198,8 +200,9 @@ children|list|是一个数组，其中的元素也是一个部门对象，表示
 parent|array|表示其上级部门的id，以此为根据创建下级部门
 
 
-# 5.更新组织架构
-**请求示例**
+# 5 更新部门信息
+
+## 5.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -216,14 +219,14 @@ PUT http://tpisdk.wellcloud.cc/api/security/security/org
 Authorization: 12345678
 ```
 
-**路径与查询字符串参数模型**
+## 5.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `PUT http://tpisdk.wellcloud.cc/api/security/security/org`
 
 
-# 6.删除组织架构
+# 6 删除部门
 
-**请求示例**
+## 6.1 请求示例 {docsify-ignore}
 
 ```
 // general
@@ -234,7 +237,7 @@ DELETE http://tpisdk.wellcloud.cc/api/security/security/org/bf5f4202-79a9-423b-b
 Authorization: 12345678
 ```
 
-**路径与查询字符串参数模型**
+## 6.2 路径与查询字符串参数模型 {docsify-ignore}
 
 `DELETE http://tpisdk.wellcloud.cc/api/security/security/org/{orgId}`
 
