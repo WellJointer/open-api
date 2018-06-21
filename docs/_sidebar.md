@@ -6,4 +6,5 @@
 * [座席管理文档](agent.md)
 * [分机管理文档](extension.md)
 * [组织架构管理文档](org.md)
+* [合作伙伴接口](partner.md)
 * [软电话集成文档](wellclient.md)
