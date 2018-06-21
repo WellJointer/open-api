@@ -1,4 +1,4 @@
-﻿﻿# 座席管理
+# 座席管理
 
 最近更新日期：{docsify-updated}
 
@@ -89,4 +89,3 @@ email|string|非必选|邮箱
 id|创建座席的唯一标识
 status |创建座席的状态, Ok表示可用
 updateTime|最近一次修改这个座席信息的时间点
-
