@@ -6,24 +6,24 @@ WellCloud慧捷云联络中心，第三方开发者。
 
 # 文档目录概览
 
-- [安全认证](security.md)
+- [安全认证文档](security.md)
     - 申请token
-- [事件订阅与推送](event.md)
+- [事件订阅与推送文档](event.md)
     - 挂断事件的订阅与推送
-- [录音调听](recording.md)
+- [录音调听文档](recording.md)
     - 根据callId查询录音
     - 录音流下载与调听
-- [自动外呼](ocm.md)
+- [自动外呼文档](ocm.md)
     - 名单上传
-- [座席管理](agent.md)
+- [座席管理文档](agent.md)
     - 创建座席
     - 批量创建座席
-- [分机管理](extension.md)
+- [分机管理文档](extension.md)
     - 创建分机
     - 批量创建分机
-- [组织管理](org.md)
+- [组织架构管理文档](org.md)
     - 创建组织架构
-- [软电话集成](wellclient.md)
+- [软电话集成文档](wellclient.md)
     - 软电话js sdk 接口说明
     - 相关事件说明
 
