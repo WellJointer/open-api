@@ -2,7 +2,7 @@
 
 最近更新日期：{docsify-updated}
 
-# 1. 根据callId查询录音
+# 1. 根据callId查录音
 
 ## 1.1 请求示例 {docsify-ignore}
 
