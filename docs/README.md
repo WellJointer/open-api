@@ -2,8 +2,6 @@
 
 最近更新日期：{docsify-updated}
 
-WellCloud慧捷云联络中心，第三方开发者。
-
 # 1. 文档目录概览
 
 - [安全认证文档](security.md)
