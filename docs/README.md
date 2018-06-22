@@ -10,7 +10,10 @@ WellCloud慧捷云联络中心，第三方开发者。
     - :bus: 申请token接口
 - [事件订阅与推送文档](event.md)
     - :bus: 事件订阅接口
-    - :book: 订阅座席状态改变事件
+    - :book: 订阅规则topics说明
+    - :book: 回调地址验证说明
+    - :book: 挂断事件数据结构说明
+    - :book: 座席状态改变事件数据结构说明
 - [录音调听文档](recording.md)
     - :bus: 根据callId查询录音接口
     - :bus: 录音流下载与调听接口
