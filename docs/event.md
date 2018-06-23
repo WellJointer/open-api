@@ -221,7 +221,7 @@ public String checkSignature(@Context HttpServletRequest request,
 参数 | 类型 | 是否必须 | 描述
 ---|---|--- | ---
 id | string | 是 | callId。呼叫id
-callType | enum string | 是 | 呼叫类型。参加`3.1.2 呼叫类型 call.callType 字段说明`
+callType | enum string | 是 | 呼叫类型。参加 **4.1.2 呼叫类型 call.callType 字段说明**
 ani | string | 是 | 主叫号码
 dnis | string | 是 | 被叫号码
 startTime | datetime | 是 | 呼叫开始时间
@@ -234,8 +234,8 @@ holdLength | int | 是 | 保持时长
 queuedLength | int | 是 | 排队时长
 length | int | 是 | 总时长
 firstStation | string | 是 | 一个呼叫中第一次接听分机号
-failedCode | enum string | 是 | 呼叫失败编码。参见`3.1.4 呼叫失败编码 call.failedCode 字段说明`
-endReason | enum string | 是 | 挂机原因。参见 `3.1.3 挂机原因 call.endReason 字段说明`
+failedCode | enum string | 是 | 呼叫失败编码。参见 **4.1.4 呼叫失败编码 call.failedCode 字段说明**
+endReason | enum string | 是 | 挂机原因。参见 **4.1.3 挂机原因 call.endReason 字段说明**
 conference | int | 是 | 会议方数量，如为0则代表此通电话没有使用会议
 transferred | int | 是 | 转接次数
 internalTransferCount | int | 是 | 内线转接次数
