@@ -6,7 +6,7 @@
 
 1.  订阅IVR设备呼叫事件（云平台提供订阅接口，第三方系统调用订阅IVR设备呼叫事件）
 2.	推送呼叫事件 （云平台把IVR呼叫事件数据推送到第三方系统提供的回调接口）
-3.	播放IVR默认问候语 （当收到呼叫进入IVR后播放默认的问候语，这一步可以没有）
+3.	播放IVR默认问候语 （当收到呼叫进入IVR后播放默认的问候语，这一步也可以省略）
 4.	发起语音监听请求（云平台提供语音监听接口，第三方系统调用接口）
 4.	语音流RTP发送 （云平台把RTP语音流发送监听请求指定的地址）
 5.	控制IVR通道媒体 （云平台提供控制IVR通道媒体接口，第三方系统调用接口)
@@ -51,6 +51,7 @@ POST /remote/monitor-call
 Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
+// request body
 {
  "id": "2db75da6-388b-4e75-a74a-4cd8197a13b4",
  "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
@@ -66,8 +67,8 @@ Content-Type: application/json;charset=utf-8
 ### 4.1.5 **响应包体示例**
 ```json
     {
-    	"id": "2db75da6-388b-4e75-a74a-4cd8197a13b4"
-    	"result": "success"
+    	"id": "2db75da6-388b-4e75-a74a-4cd8197a13b4",
+     "result": "success"
     }
 ```
 -----------------------------------------------
@@ -99,6 +100,7 @@ POST /media/playMedia
 Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
+// request body
 {
  "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
  "urls":"welcome.wav;bye.wav"
@@ -140,6 +142,7 @@ POST /media/stopMedia
 Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
+// request body
 {
  "callId": "82327ef4-b608-4af2-ab69-9186eab1d663"
 }
@@ -181,6 +184,7 @@ POST /media/stopAndPlayMedia
 Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
+// request body
 {
  "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
  "urls": "welcome.wav;bye.wav"
