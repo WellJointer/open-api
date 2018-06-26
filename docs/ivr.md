@@ -14,9 +14,7 @@
 
 # 2 系统集成流程图
 
-
-
-
+ ![IVR](./ivr.png)
 
 
 # 3 订阅事件接口
@@ -69,7 +67,7 @@ Content-Type: application/json;charset=utf-8
 ```json
     {
     	"id": "2db75da6-388b-4e75-a74a-4cd8197a13b4"
-    	"result":"success"
+    	"result": "success"
     }
 ```
 -----------------------------------------------
