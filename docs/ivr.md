@@ -11,19 +11,18 @@
 4.	语音流RTP发送 （云平台把RTP语音流发送监听请求指定的地址）
 5.	控制IVR通道媒体 （云平台提供控制IVR通道媒体接口，第三方系统调用接口)
 
-----------------------------------------
 
 # 2 系统集成流程图
 
 
 
----------------------------------------
+
 
 
 # 3 订阅事件接口
 事件订阅接口请参考 [事件订阅与推送文档](https://wellcloud-docs.github.io/open-api/#/event)
 
------------------------------------
+
 # 4	语音监听接口
 ## 4.1 开启语音监听接口
 ### 4.1.1	**接口说明**
@@ -61,16 +60,16 @@ Content-Type: application/json;charset=utf-8
  "from-tag":  "r69vX16tmZ7cQ",
  "to-tag":     "8d4b8235",
  "a-rtp": "udp://172.16.200.17:33121",
- "c-rtp": "udp://172.16.200.17:33122"，
- "deviceId":"80126@yanrui.cc"
+ "c-rtp": "udp://172.16.200.17:33122",
+ "deviceId": "80126@yanrui.cc"
 }
 ```
 
 ### 4.1.5 **响应包体示例**
 ```json
     {
-    	“id”: “2db75da6-388b-4e75-a74a-4cd8197a13b4”
-    	“result”:”success”
+    	"id": "2db75da6-388b-4e75-a74a-4cd8197a13b4"
+    	"result":"success"
     }
 ```
 -----------------------------------------------
@@ -103,8 +102,8 @@ Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
 {
- “callId”: “82327ef4-b608-4af2-ab69-9186eab1d663”,
- “urls”:"welcome.wav;bye.wav"
+ "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
+ "urls":"welcome.wav;bye.wav"
 }
 ```
 
@@ -112,7 +111,7 @@ Content-Type: application/json;charset=utf-8
 
 ```json
 {
-    callId:"a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
+    "callId":"a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
 }
 ```
 
@@ -144,7 +143,7 @@ Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
 {
- “callId”: “82327ef4-b608-4af2-ab69-9186eab1d663”
+ "callId": "82327ef4-b608-4af2-ab69-9186eab1d663"
 }
 ```
 
@@ -152,7 +151,7 @@ Content-Type: application/json;charset=utf-8
 
 ```json
 {
-    callId:"a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
+    "callId": "a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
 }
 ```
 
@@ -185,8 +184,8 @@ Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
 {
- “callId”: “82327ef4-b608-4af2-ab69-9186eab1d663”,
- “urls”:"welcome.wav;bye.wav"
+ "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
+ "urls": "welcome.wav;bye.wav"
 }
 ```
 
@@ -194,7 +193,7 @@ Content-Type: application/json;charset=utf-8
 
 ```json
 {
-    callid:"a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
+    "callId":"a8307aa5-bd11-4216-a6e2-5e5d6161aec4"
 }
 ```
 
