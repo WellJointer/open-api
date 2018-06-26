@@ -15,7 +15,6 @@
 
 # 2 系统集成流程图
 
-![](leanote://file/getImage?fileId=5b31edcd9cbd166b70000001)
 
 
 ---------------------------------------
@@ -56,14 +55,14 @@ Authorization: a8307aa5-bd11-4216-a6e2-5e5d6161aec4
 Content-Type: application/json;charset=utf-8
 
 {
- “id”: “2db75da6-388b-4e75-a74a-4cd8197a13b4”,
- “callId”: “82327ef4-b608-4af2-ab69-9186eab1d663”,
- “sip-callId”: “6df4cb47970d1b824c8fa48219b10142@192.168.40.193”,
- “from-tag”:  “r69vX16tmZ7cQ”,
- “to-tag”:     “8d4b8235”,
- “a-rtp”: ”udp://172.16.200.17:33121”,
+ "id": "2db75da6-388b-4e75-a74a-4cd8197a13b4",
+ "callId": "82327ef4-b608-4af2-ab69-9186eab1d663",
+ "sip-callId": "6df4cb47970d1b824c8fa48219b10142@192.168.40.193",
+ "from-tag":  "r69vX16tmZ7cQ",
+ "to-tag":     "8d4b8235",
+ "a-rtp": "udp://172.16.200.17:33121",
  "c-rtp": "udp://172.16.200.17:33122"，
- “deviceId”:”80126@yanrui.cc”
+ "deviceId":"80126@yanrui.cc"
 }
 ```
 
