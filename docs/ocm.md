@@ -13,7 +13,7 @@ Authorization: 12345678
 Content-Type: Multipart/File
 
 // reuest body is a txt file, like names.txt
-// format: id,productId,phoneNumber
+// format: id,productId,phoneNumber,customerId,userData
 12345,S,17412345678,b001,name:张三|age:26
 12345,S,17412345678,b002,name:李四|age:28
 12345,S,17412345678,b002,name:王二|age:30
@@ -55,7 +55,9 @@ activity_id | 是 | 活动id，创建活动后由外呼平台提供
 500 | 内部服务错误
 
 # 2 名单上传(json方式)
-注：json上传暂不支持随路数据
+
+!>注：json上传暂不支持随路数据
+
 ## 2.1 请求示例 {docsify-ignore}
 
 ```
