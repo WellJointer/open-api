@@ -1,6 +1,6 @@
 # 自动外呼
 
-# 1 名单上传(文件方式)
+# 1 名单上传(文件流方式)
 
 ## 1.1 请求示例 {docsify-ignore}
 
@@ -14,9 +14,9 @@ Content-Type: Multipart/File
 
 // reuest body is a txt file, like names.txt
 // format: id,productId,phoneNumber
-12345,S,17412345678
-12345,S,17412345678
-12345,S,17412345678
+12345,S,17412345678,b001,name:张三|age:26
+12345,S,17412345678,b002,name:李四|age:28
+12345,S,17412345678,b002,name:王二|age:30
 
 ```
 
@@ -33,16 +33,17 @@ activity_id | 是 | 活动id，创建活动后由外呼平台提供
 - 请求体是一个文本文件，可以使用txt、csv以及dat格式的文件
 - 文件名不做要求，建议使用英文名
 - 文件大小不要超过10MB
-- 文件的每一行由名单Id, 产品id, 手机号，客户id组成。四者之间要用英文逗号隔开
+- 文件的每一行由名单Id(rosterId), 业务类型(prdType), 手机号(number)，客户id(customerId)和随路数据组成。五部分之间要用英文逗号隔开
+- 随路数据是key-value形式的，key和value之间用英文冒号（“:”）间隔，每一对key-value之间用竖线（“|”）间隔
 
-注：客户id为可选字段，可以不用上传
+注：客户id和随路数据为可选字段，可以不用上传
 
 示例：
 
 ```
-12345,S,17412345678,a01
-12345,S,17412345678,a02
-12345,S,17412345678,a03
+12345,S,17412345678,a01,name:张三|age:26
+12345,S,17412345678,a02,name:李四|age:28
+12345,S,17412345678,a03,name:王二|age:30
 ```
 
 ## 1.4 响应体说明 {docsify-ignore}
@@ -53,8 +54,8 @@ activity_id | 是 | 活动id，创建活动后由外呼平台提供
 404 | 地址错误
 500 | 内部服务错误
 
-# 2 名单上传(接口方式)
-
+# 2 名单上传(json方式)
+注：json上传暂不支持随路数据
 ## 2.1 请求示例 {docsify-ignore}
 
 ```
@@ -71,13 +72,15 @@ Content-Type: application/json;charset=utf-8
         "rosterId":"12345",
         "prdType":"E",
         "number":"123456",
-        "agent":"5001"
+        "agent":"5001",
+        "customerId":"boo1"
     },
     {
         "rosterId":"12345",
         "prdType":"E",
         "number":"123456",
-        "agent":"5001"
+        "agent":"5001",
+        "customerId":"b002"
     }
 ]
 ```
@@ -100,6 +103,7 @@ rosterId | 是 | 名单的流水号，字符类型
 prdType | 是 | 活动类型，可以自定义，不影响业务 
 number | 是 | 客户号码 
 agent | 否 | 为客户预先分配的座席 
+customerId | 否 | 客户编号，字符类型 
 
 # 3 数据回传
 
@@ -140,13 +144,13 @@ agent | 否 | 为客户预先分配的座席
 | callId      | string   | 呼叫的唯一id，只要该名单进行过外呼就会生成                   |
 | prdType     | string   | 上传名单中的活动类型                                         |
 | activityId  | string   | 活动id                                                       |
-| msg         | string   | 呼叫结果                                                     |
+| msg         | int      | 呼叫结果                                                     |
 | failMsg     | string   | 失败原因                                                     |
 | round       | int      | 代表这条记录是第几次拨打的                                   |
 | state       | int      | 名单过期    -10  业务禁播    -5  线路异常    -3  挂断    -4  成功    0  用户忙  1  网络忙  10  超时    11  短音忙  12  长音忙  13  其它    14  来电提醒    2  无法接通    3  呼叫限制    4  呼叫转移    5  关机    6  停机    7  空号    8  正在通话中  9 |
 | startTime   | long     | 外呼发起时间,unix时间戳                                      |
 | endTime     | long     | 外呼结束时间，unix时间戳  呼叫未被用户接通时为外呼结束时间，呼叫被用户接通时为呼叫转接到坐席的时间 |
-| respondTime | ling     | 外线应答时间，unix时间戳                                     |
+| respondTime | long     | 外线应答时间，unix时间戳，未应答时是0                                  |
 | batchId     | string   | 名单所属批次                                                 |
 | agent       | string   | 呼叫分配的坐席                                               |
 
