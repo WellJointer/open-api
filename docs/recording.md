@@ -1,4 +1,4 @@
-﻿# 录音调听
+# 录音调听
 
 最近更新日期：{docsify-updated}
 
@@ -89,6 +89,38 @@ download | 是 | 是否需要下载。true表示下载，false表示不下载(�
 ## 2.3 响应体说明 {docsify-ignore}
 
 响应体是以流的形式下载或调听
+
+# 3 根据callId下载与调听录音
+
+## 3.1 请求示例 {docsify-ignore}
+
+请求头部字段`Authorization`字段值即申请到的`token`值
+
+```
+//general
+GET http://tpisdk.wellcloud.cc/api/operation/tenant/calls/{{callId}}/recording/stream?download=false
+
+// request headers
+Authorization: 12345678
+
+//response
+stream
+```
+## 3.2 路径与查询字符串参数模型 {docsify-ignore}
+
+`GET http://tpisdk.wellcloud.cc/api/operation/tenant/calls/{{callId}}/recording/stream?download={{downlaod}}`
+
+名称 | 是否必须 | 说明
+---|---|---
+callId | 是 | callId
+download | 是 | 是否需要下载。true表示下载，false表示不下载(默认)
+
+
+## 3.3 响应体说明 {docsify-ignore}
+
+响应体是以流的形式下载或调听
+
+
 
 
 
