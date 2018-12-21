@@ -10,7 +10,7 @@ POST http://ocm.wellcloud.cc:8099/ocm/fileupload?activity_id=12345678
 
 // request headers
 Authorization: 12345678
-Content-Type: Multipart/File
+Content-Type: multipart/form-data
 
 // reuest body is a txt file, like names.txt
 // format: id,productId,phoneNumber,customerId,userData
