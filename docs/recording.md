@@ -2,7 +2,7 @@
 
 最近更新日期：{docsify-updated}
 
-# 1. 根据callId查录音
+# 1. 根据callId查录音(说明：由于通话结束到写入数据库有3秒延迟，4秒后再获取录音)
 
 ## 1.1 请求示例 {docsify-ignore}
 
@@ -38,28 +38,28 @@ Content-Type: application/json;charset=utf-8
 
 `GET http://tpisdk.wellcloud.cc/api/operation/tenant/calls/{{callId}}/recordings2`
 
-名称 | 是否必须 | 说明
----|---|---
-callId | 是 | callId
+| 名称     | 是否必须 | 说明     |
+| ------ | ---- | ------ |
+| callId | 是    | callId |
 
 ## 1.3 响应体说明 {docsify-ignore}
 
 由于一个callId可能会有多段录音，所以返回的响应体是一个数组。录音数据模型说明。
 
-名称 | 说明
----|---
-id | 录音id
-ani | 主叫
-dnis | 被叫
-callDirection | 呼叫方向。Inbound表示呼入，Outbound表示呼出，Internal表示分机间内部呼叫，Offhook表示摘机，PreOccupied表示预占式外呼，PreDictive表示预测式外呼
-startTime | 开始时间
-endTime | 结束时间
-callLength | 呼叫时长
-fileSize | 文件大小
-deviceId | 设备Id。指分机id, 如8001@test.cc
-callId | callId
-state | 状态。Fail表示失败，Success表示成功
-tenantId | 租户id
+| 名称            | 说明                                       |
+| ------------- | ---------------------------------------- |
+| id            | 录音id                                     |
+| ani           | 主叫                                       |
+| dnis          | 被叫                                       |
+| callDirection | 呼叫方向。Inbound表示呼入，Outbound表示呼出，Internal表示分机间内部呼叫，Offhook表示摘机，PreOccupied表示预占式外呼，PreDictive表示预测式外呼 |
+| startTime     | 开始时间                                     |
+| endTime       | 结束时间                                     |
+| callLength    | 呼叫时长                                     |
+| fileSize      | 文件大小                                     |
+| deviceId      | 设备Id。指分机id, 如8001@test.cc                |
+| callId        | callId                                   |
+| state         | 状态。Fail表示失败，Success表示成功                  |
+| tenantId      | 租户id                                     |
 
 # 2 录音流下载与调听
 
@@ -80,10 +80,10 @@ stream
 
 `GET http://tpisdk.wellcloud.cc/api/operation/tenant/recording/{{audioId}}/stream2?download={{downlaod}}`
 
-名称 | 是否必须 | 说明
----|---|---
-audioId | 是 | 录音id
-download | 是 | 是否需要下载。true表示下载，false表示不下载(默认)
+| 名称       | 是否必须 | 说明                             |
+| -------- | ---- | ------------------------------ |
+| audioId  | 是    | 录音id                           |
+| download | 是    | 是否需要下载。true表示下载，false表示不下载(默认) |
 
 
 ## 2.3 响应体说明 {docsify-ignore}
@@ -110,10 +110,10 @@ stream
 
 `GET http://tpisdk.wellcloud.cc/api/operation/tenant/calls/{{callId}}/recording/stream?download={{downlaod}}`
 
-名称 | 是否必须 | 说明
----|---|---
-callId | 是 | callId
-download | 是 | 是否需要下载。true表示下载，false表示不下载(默认)
+| 名称       | 是否必须 | 说明                             |
+| -------- | ---- | ------------------------------ |
+| callId   | 是    | callId                         |
+| download | 是    | 是否需要下载。true表示下载，false表示不下载(默认) |
 
 
 ## 3.3 响应体说明 {docsify-ignore}
