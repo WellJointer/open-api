@@ -1,4 +1,4 @@
-﻿# 事件订阅与推送
+# 事件订阅与推送
 
 最近更新日期：{docsify-updated}
 
@@ -265,6 +265,7 @@ Transferred | 转接
 ExtDrop | 分机挂断
 Redirect | 重定向
 Unknown | 未知
+Failed | 呼叫客户失败
 
 ### 4.1.4 呼叫失败编码 call.failedCode 字段说明
 
