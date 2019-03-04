@@ -67,23 +67,24 @@ Content-Type: application/json;charset=utf-8
 
 ## 1.3 请求参数说明 {docsify-ignore}
 
-| 属性               | 类型     | 约束   | 说明                |
-| ---------------- | ------ | ---- | ----------------- |
-| code             | string | 必选   | 座席工号              |
-| loginName        | string | 必选   | 登录名               |
-| userName         | string | 必选   | 用户名               |
-| roles            | list   | 非必选  | 座席角色              |
-| org              | array  | 非必选  | 座席所在的组织结构，默认在总公司下 |
-| tenantId         | string | 非必选  | 租户id              |
-| namespace        | string | 非必选  | 租户域名              |
-| agentQueues      | list   | 非必选  | 座席技能组             |
-| useOnlineService | string | 非必选  | 是否使用第3方集成配置       |
-| password         | string | 非必选  | 如果不指定，默认为Aa123456 |
-| gender           | string | 非必选  | Male,Female       |
-| phone            | string | 非必选  | 手机号码              |
-| email            | string | 非必选  | 邮箱                |
+属性 | 类型 | 约束 | 说明
+--- | --- | --- | ---
+code | string | 必选|  座席工号
+loginName| string | 必选|  登录名
+userName| string | 必选|   用户名
+roles |list|非必选|座席角色
+org |array| 非必选|座席所在的组织结构，默认在总公司下
+tenantId|string |非必选|租户id
+namespace|string|非必选|租户域名
+agentQueues|list|非必选|座席技能组
+useOnlineService|string|非必选|是否使用第3方集成配置
+password|string|非必选|如果不指定，默认为Aa123456
+gender|string|非必选|Male,Female
+phone|string|非必选|手机号码
+email|string|非必选|邮箱
 
 ## 1.4 响应体说明 {docsify-ignore}
+
 
 | 属性         | 说明               |
 | ---------- | ---------------- |
@@ -130,7 +131,3 @@ Content-Type: application/json;charset=utf-8
 | 403  | 没有在头信息中传入token值                  |
 | 424  | 坐席不存在                            |
 | 452  | 密码格式不符号要求（要求格式为:8-16个字符，包括大小写字母，数字） |
-
-
-
-

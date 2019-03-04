@@ -10,7 +10,7 @@ POST http://ocm.wellcloud.cc:8099/ocm/fileupload?activity_id=12345678
 
 // request headers
 Authorization: 12345678
-Content-Type: Multipart/File
+Content-Type: multipart/form-data
 
 // reuest body is a txt file, like names.txt
 // format: id,productId,phoneNumber,customerId,userData
@@ -46,13 +46,14 @@ activity_id | 是 | 活动id，创建活动后由外呼平台提供
 12345,S,17412345678,a03,name:王二|age:30
 ```
 
-## 1.4 响应体说明 {docsify-ignore}
+## 1.4 响应说明 {docsify-ignore}
 
 状态码 | 说明
 ---|---
 200 | 名单调用成功
 404 | 地址错误
 500 | 内部服务错误
+备注：状态码是http请求的返回码，并不是在响应体中。
 
 # 2 名单上传(json方式)
 
