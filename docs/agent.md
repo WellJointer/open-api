@@ -97,10 +97,7 @@ Content-Type: application/json;charset=utf-8
 
 ```
 // general
-PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/5183/resetAgentPassword2
-
-// body
-Aa123456
+PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/5183/resetAgentPassword2?password=Aa123456
 
 // request headers
 Authorization: 12345678
@@ -112,14 +109,14 @@ Content-Type: application/json;charset=utf-8
 
 ## 2.2 路径与查询字符串参数模型 {docsify-ignore}
 
-`PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/{{code}}/resetAgentPassword2`
+`PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/{{code}}/resetAgentPassword2?password={{password}}`
 
 ## 2.3 请求参数说明 {docsify-ignore}
 
 | 属性       | 类型     | 约束   | 说明      | 位置                                       |
 | -------- | ------ | ---- | ------- | ---------------------------------------- |
 | code     | string | 必选   | 座席工号    | 路径中                                      |
-| password | string | 必选   | 需要修改的密码 | body中(注意：无须写成key-value形式，直接在body中写value即需要修改的密码就可以了) |
+| password | string | 必选   | 需要修改的密码 | 路径中(要求格式为:8-16个字符，包括大小写字母，数字) |
 
 ## 2.4 响应体说明 {docsify-ignore}
 
