@@ -49,6 +49,7 @@ token | token
 
 ## 1.4 异常响应与解决方案 {docsify-ignore}
 
-异常响应体 | 问题原因 |解决方案
---- | --- | ---
-{"message":"RESTEASY003065: Cannot consume content type","code":"500"} | 发送的请求Content-Type有问题，导致服务端无法解析 | 请检查发送的数据 Content-Type 头的值是否是 application/json;charset=utf-8
+错误码 | 异常响应体 | 问题原因 |解决方案
+---|--- | --- | ---
+500 |{"message":"RESTEASY003065: Cannot consume content type","code":"500"} | 发送的请求Content-Type有问题，导致服务端无法解析 | 请检查发送的数据 Content-Type 头的值是否是 application/json;charset=utf-8
+425 | | appSecret或appId错误 |
