@@ -53,3 +53,12 @@ token | token
 ---|--- | --- | ---
 500 |{"message":"RESTEASY003065: Cannot consume content type","code":"500"} | 发送的请求Content-Type有问题，导致服务端无法解析 | 请检查发送的数据 Content-Type 头的值是否是 application/json;charset=utf-8
 425 | | appSecret或appId错误 |
+
+## 1.5 token使用说明 {docsify-ignore}
+
+- 后续接口在使用token时，如果token已经过期，那么将会返回HTTP状态码 `401`
+- 如果调用需要token的接口，而没传token, 那么将会返回HTTP状体码 `403`
+
+
+
+
