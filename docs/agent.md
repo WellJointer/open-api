@@ -85,8 +85,49 @@ email|string|非必选|邮箱
 
 ## 1.4 响应体说明 {docsify-ignore}
 
-属性 | 说明
---- | ---
-id|创建座席的唯一标识
-status |创建座席的状态, Ok表示可用
-updateTime|最近一次修改这个座席信息的时间点
+
+| 属性         | 说明               |
+| ---------- | ---------------- |
+| id         | 创建座席的唯一标识        |
+| status     | 创建座席的状态, Ok表示可用  |
+| updateTime | 最近一次修改这个座席信息的时间点 |
+
+# 2.根据坐席工号修改密码
+
+## 2.1 请求示例 {docsify-ignore}
+
+```
+// general
+PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/5183/resetAgentPassword2?password=Aa123456
+
+// request headers
+Authorization: 12345678
+Content-Type: application/json;charset=utf-8
+
+// response
+没有响应体
+```
+
+## 2.2 路径与查询字符串参数模型 {docsify-ignore}
+
+`PUT http://tpisdk.wellcloud.cc/api/operation/tenant/agents/{{code}}/resetAgentPassword2?password={{password}}`
+
+## 2.3 请求参数说明 {docsify-ignore}
+
+| 属性       | 类型     | 约束   | 说明      | 位置                                       |
+| -------- | ------ | ---- | ------- | ---------------------------------------- |
+| code     | string | 必选   | 座席工号    | 路径中                                      |
+| password | string | 必选   | 需要修改的密码 | 路径中(要求格式为:8-16个字符，包括大小写字母，数字) |
+
+## 2.4 响应体说明 {docsify-ignore}
+
+无响应体（成功响应码为：204）
+
+## 2.5 异常说明 {docsify-ignore}
+
+| 错误码  | 说明                               |
+| ---- | -------------------------------- |
+| 401  | token值有误                         |
+| 403  | 没有在头信息中传入token值                  |
+| 424  | 坐席不存在                            |
+| 472  | 密码格式不符号要求（要求格式为:8-16个字符，包括大小写字母，数字） |
