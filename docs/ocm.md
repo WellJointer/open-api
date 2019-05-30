@@ -145,17 +145,17 @@ customerId | 否 | 客户编号，字符类型
 | ----------- | -------- | ------------------------------------------------------------ |
 | id          | string   | 上传名单中的id                                               |
 | callId      | string   | 呼叫的唯一id，只要该名单进行过外呼就会生成                   |
-| prdType     | string   | 上传名单中的活动类型                                         |
+| prdId       | string   | 上传名单中的产品Id                                           |
 | activityId  | string   | 活动id                                                       |
-| msg         | int      | 呼叫结果                                                     |
-| failMsg     | string   | 失败原因                                                     |
 | round       | int      | 代表这条记录是第几次拨打的                                   |
-| state       | int      | 名单过期    -10  业务禁播    -5  线路异常    -3  挂断    -4  成功    0  用户忙  1  网络忙  10  超时    11  短音忙  12  长音忙  13  其它    14  来电提醒    2  无法接通    3  呼叫限制    4  呼叫转移    5  关机    6  停机    7  空号    8  正在通话中  9 |
+| state       | int      | 名单过期:-10,业务禁播:-5,  线路异常:-3,挂断:-4,成功:0,用户忙:1,网络忙:10,超时:11,短音忙:12,长音忙:13,其它: 14,来电提醒:2,无法接通:3,呼叫限制:4,呼叫转移:5,关机:6,停机:7,空号:8,正在通话中:9. |
+| result      | string   | state字段的中文释义                                          |
 | startTime   | long     | 外呼发起时间,unix时间戳                                      |
 | endTime     | long     | 外呼结束时间，unix时间戳  呼叫未被用户接通时为外呼结束时间，呼叫被用户接通时为呼叫转接到坐席的时间 |
-| respondTime | long     | 外线应答时间，unix时间戳，未应答时是0                                  |
+| respondTime | long     | 外线应答时间，unix时间戳，未应答时是0                        |
 | batchId     | string   | 名单所属批次                                                 |
 | agent       | string   | 呼叫分配的坐席                                               |
+| uui         | json     | 名单中的随路数据和ivr流程按键信息                            |
 
 ## 3.4 推送结果示例 {docsify-ignore}
 
@@ -164,34 +164,54 @@ customerId | 否 | 客户编号，字符类型
 ```json
 [
     {
-        "respondTime":0,
-        "state":-3,
-        "round":1,
-        "batchId":"58-20171109095000391",
-	"prdType":"123T",
-        "callId":"686ee96b-5c67-4911-9c9d-d6e730a1335e",
-        "endTime":1510211809000,
-        "agent":"5902@ocm.test",
-        "msg":-3,
-        "id":"21120964",
-        "startTime":1510211793000,
-        "activityId":"cffb8899976a11e79ac30050569505de",
-        "failMsg":"线路异常"
+        "callId": "4f517627-4b15-43f1-98ed-f850ee1d308c",
+        "msg": 0,
+        "agent": "5902@ocm.test",
+        "respondTime": 1559124413101,
+        "uui": {
+            "amount": "1089.93",
+            "gender": "女士",
+            "date": "2019-06-01",
+            "recognition": "[{\"input1\":\"1\"}]",
+            "type": "3",
+            "card": "8888",
+            "username": "张三"
+        },
+        "batchId": "6666-20190529180509674",
+        "result": "成功",
+        "number": "13300000000",
+        "activityId": "92b8e0f87d3411e9ad53005056955a13",
+        "round": 1,
+        "prdId": "6666",
+        "startTime": 1559124400892,
+        "id": "22370914850",
+        "endTime": 1559124469853,
+        "state": 0
     },
     {
-        "respondTime":1510211831000,
-        "state":0,
-        "round":1,
-        "batchId":"58-20171109095000391",
-	"prdType":"123T",
-        "callId":"f596dbad-7346-4fd8-a515-cff96ecc2b2c",
-        "endTime":1510211831000,
-        "agent":"5902@ocm.test",
-        "msg":0,
-        "id":"20711693",
-        "startTime":1510211815000,
-        "activityId":"cffb8899976a11e79ac30050569505de",
-        "failMsg":"成功"
+        "callId": "e1ccf1d3-c92f-4e1c-991d-87dc3d00bb17",
+        "msg": 0,
+        "agent": "5902@ocm.test",
+        "respondTime": 1559124349119,
+        "uui": {
+            "amount": "83.01",
+            "gender": "女士",
+            "date": "2019-06-01",
+            "recognition": "[{\"input1\":\"1\"}]",
+            "type": "3",
+            "card": "8888",
+            "username": "李四"
+        },
+        "batchId": "6666-20190529180459224",
+        "result": "成功",
+        "number": "13400000000",
+        "activityId": "92b8e0f87d3411e9ad53005056955a13",
+        "round": 1,
+        "prdId": "6666",
+        "startTime": 1559124337464,
+        "id": "22370914850",
+        "endTime": 1559124400277,
+        "state": 0
     }
 ]
 ```
